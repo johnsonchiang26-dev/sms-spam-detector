@@ -1,0 +1,16 @@
+label,text,category
+spam,Your account verification code is 884213. Confirm now or your account will be suspended: http://secure-verify-account.com/login,otp_phishing
+spam,ALERT: Someone tried to access your bank account. Verify it's you within 15 mins: https://bit.ly/3xVrfy or service is locked.,otp_phishing
+spam,"We detected a login from a new device. If this wasn't you, secure your account immediately: http://account-security-check.vip/verify",otp_phishing
+spam,"Dear customer, your KYC is incomplete. Update your details within 24h to avoid account freeze: http://kyc-update-portal.online/form",kyc_phishing
+spam,Your debit card will be blocked today due to pending KYC. Complete verification here: www.bank-kyc-verify.tk/update,kyc_phishing
+spam,"Your crypto withdrawal of $4,800 is pending approval. Authorise it now or it will be cancelled: http://wallet-confirm.app/auth",trading_phishing
+spam,Congratulations! You've been selected for our exclusive trading signal group with 300% returns. Join: https://t.me/joinx-invest,trading_phishing
+spam,"Your investment account has a credit of £2,000 ready to claim. Verify your identity to release funds: http://claim-funds-now.click",trading_phishing
+spam,FINAL NOTICE: Your parcel is held at customs. Pay the £1.99 release fee here: http://tinyurl.com/parcel-fee-uk,sms_pumping
+spam,You have 1 unclaimed reward worth $500 from your bank loyalty program. Claim before it expires: http://rewards-redeem.link/go,sms_pumping
+ham,Your OTP for the transaction of GBP 45.00 at TESCO is 552190. Do not share this code with anyone.,legit_finance
+ham,"Your salary of $3,200 has been credited to your account ending 4471. Available balance: $5,118.22.",legit_finance
+ham,Reminder: your credit card payment of $150 is due on the 15th. Log in to the app to pay or set up autopay.,legit_finance
+ham,Thank you. We received your payment of £29.99. Your next billing date is 06 Jul. - Your subscription team,legit_finance
+ham,"A withdrawal of $200 was made from ATM at Main St. If this wasn't you, call the number on the back of your card.",legit_finance

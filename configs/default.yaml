@@ -1,0 +1,35 @@
+# ============================================================================
+# Default training configuration for the BERT SMS spam / phishing detector.
+#
+# Every field is consumed by src/train.py. CLI flags (argparse) override the
+# values here, so this file is the single source of truth for a reproducible
+# baseline run.
+# ============================================================================
+
+# ── Model ───────────────────────────────────────────────────────────────────
+model_name: bert-base-uncased   # HuggingFace checkpoint for encoder + tokenizer
+max_length: 128                  # token cap — SMS are short, 128 covers >99.9%
+dropout: 0.3                     # dropout on the [CLS] vector before the head
+num_labels: 2                    # ham (0) / spam (1)
+
+# ── Optimisation ────────────────────────────────────────────────────────────
+epochs: 4
+batch_size: 16
+learning_rate: 2.0e-5            # standard BERT fine-tuning LR
+weight_decay: 0.01               # excludes bias & LayerNorm (see train.py)
+warmup_ratio: 0.1                # linear warmup over first 10% of steps
+gradient_clip: 1.0               # max grad norm for clipping
+
+# ── Training control ────────────────────────────────────────────────────────
+early_stopping_patience: 2       # stop if val F1 has not improved in N epochs
+seed: 42
+
+# ── Data splits (stratified by label) ───────────────────────────────────────
+train_ratio: 0.70
+val_ratio: 0.10
+test_ratio: 0.20
+
+# ── Paths ───────────────────────────────────────────────────────────────────
+data_path: data/raw/SMSSpamCollection         # UCI TSV (label\ttext)
+phishing_path: data/phishing_examples.csv     # hand-written finance phishing
+output_dir: checkpoints                        # best model + tokenizer go here
