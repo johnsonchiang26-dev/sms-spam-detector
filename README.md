@@ -9,14 +9,14 @@ comparison.
 > screened for spam/phishing here; when it is flagged **and** carries a URL, the
 > raw link is escalated to the companion
 > [`malicious-url-detector`](https://github.com/johnsonchiang26-dev/malicious-url-detector)
-> (a character-level CNN) for link-level threat scoring.
+> (feature engineering + TF-IDF word/char n-grams → LinearSVC, 4-class) for link-level threat scoring.
 
 ```
    ┌──────────────────────────┐    spam + contains URL    ┌───────────────────────────┐
    │   SMS Spam Detection      │ ────────────────────────▶ │  Malicious URL Detection  │
-   │   BERT  ·  this repo      │                           │  CharCNN  ·  companion    │
+   │   BERT  ·  this repo      │                           │  TF-IDF + ML · companion  │
    └──────────────────────────┘                           └───────────────────────────┘
-        ham / spam decision                                    benign / malicious URL
+        ham / spam decision                          benign / phishing / malware / defacement
 ```
 
 This mirrors how a production SMS abuse-detection system triages a message, then
