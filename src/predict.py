@@ -2,9 +2,10 @@
 
 The :class:`SMSClassifier` wraps tokenizer + model + cleaning into a single
 ``predict()`` call. It also surfaces any raw URLs found in a message — the hand-off
-point to the companion ``malicious-url-detector`` (CharCNN) project:
+point to the companion ``malicious-url-detector`` (TF-IDF word/char n-grams →
+LinearSVC, 4-class: benign / phishing / malware / defacement) project:
 
-    SMS spam detection  →  spam contains a URL  →  URL maliciousness scan
+    SMS spam detection  →  spam contains a URL  →  URL threat scan (4-class)
 
 Usage::
 

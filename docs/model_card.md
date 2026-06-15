@@ -46,12 +46,13 @@ logits → softmax → {ham, spam}
   short-text security classification, and screening SMS for spam/phishing in a
   research or prototype setting.
 - **Pipeline context**: Designed to feed a second-stage **URL maliciousness
-  detector** (`malicious-url-detector`, a character-level CNN). When this model
-  flags a message as spam *and* a URL is present, the raw URL is handed off for
-  deeper analysis:
+  detector** (`malicious-url-detector` — feature engineering + TF-IDF word/char
+  n-grams → LinearSVC, 4-class: benign / phishing / malware / defacement). When
+  this model flags a message as spam *and* a URL is present, the raw URL is
+  handed off for deeper analysis:
 
   ```
-  SMS spam detection  →  spam contains a URL  →  CharCNN URL maliciousness scan
+  SMS spam detection  →  spam contains a URL  →  URL threat scan (4-class)
   ```
 
 - **Out-of-scope use**: Not validated for production message blocking,
