@@ -175,7 +175,7 @@ subdomains, and SMS-pumping with URL-shortened redirect chains.
 ## Professional context
 
 I currently work as a **Data Analyst / Data Engineer at a fintech company**, where
-I own the SMS / risk module: an ETL pipeline over **90M+ SMS delivery records**,
+I own the SMS / risk module: an ETL pipeline over **94M+ SMS delivery records**,
 including OTP-verification-rate monitoring and an anomaly-detection alerting system
 (ABCD severity tiering). The recurring attack patterns I deal with — OTP phishing
 with spoofed verification URLs, credential stuffing with randomized subdomains, and
